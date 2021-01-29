@@ -9,7 +9,7 @@ class Project(models.Model):
     members_not_approved = models.ManyToManyField(User,null=True,blank=True,related_name="mem_not_approved")
     owner = models.ForeignKey(User,on_delete=models.DO_NOTHING)
     def __str__(self):
-        return f"{name}"
+        return f"{self.name}"
 
 class Comment(models.Model):
     text=  models.TextField(null=False)
@@ -17,4 +17,4 @@ class Comment(models.Model):
     project = models.ForeignKey(Project,blank=False,on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{text} on {project}"
+        return f"{self.text} on {self.project}"
