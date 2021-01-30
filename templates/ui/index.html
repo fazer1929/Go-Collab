@@ -1,0 +1,168 @@
+{% extends 'ui/layout.html' %} {% block body%}
+<!-- Home Design -->
+<section class="home-one home1-overlay home1_bgi1">
+	<div class="container">
+		<div class="row posr">
+			<div class="col-lg-12">
+				<div class="home_content">
+					<div class="home-text text-center">
+						<h2 class="fz55">Create Your Dream Projects</h2>
+						<p class="fz18 color-white">
+							Creating A Team | Find A Team | Join A Project
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Feature Properties -->
+<section id="feature-property" class="feature-property bgc-f7">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-12">
+				<a href="#feature-property">
+					<div class="mouse_scroll">
+						<div class="wrapper">
+							<div class="icon">
+								<h4>Scroll Down</h4>
+								<p>to discover more</p>
+							</div>
+							<div class="thumb">
+								<img src="images/resource/mouse.png" alt="mouse.png" />
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="container ovh">
+		<div class="row">
+			<div class="col-lg-6 offset-lg-3">
+				<div class="main-title text-center mb40">
+					<h2>Recent Projects</h2>
+				</div>
+			</div>
+			<div class="col-lg-12">
+				<div class="feature_property_slider">
+					
+					{% for project in projects %}
+					<div class="item">
+						<div class="feat_property">
+						
+							<div class="details">
+								<div class="tc_content">
+									<p class="text-thm">Project</p>
+									<h4>{{project.name}}</h4>
+									<p>
+										<span class="flaticon-description"></span
+										>{{project.description}}									</p>
+									<ul class="prop_details mb0">
+										<li class="list-inline-item"><a href="#">html</a></li>
+										<li class="list-inline-item"><a href="#">js</a></li>
+										<li class="list-inline-item"><a href="#">css</a></li>
+									</ul>
+								</div>
+								<div class="fp_footer">
+									<ul class="fp_meta float-left mb0">
+										<li class="list-inline-item">
+										
+										</a>
+										</li>
+										<li class="list-inline-item">
+											<a href="#">{{project.owner}}</a>
+										</li>
+									</ul>
+									<div class="fp_pdate float-right">
+										{{project.created_at}}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				
+					{%endfor%}
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Why Chose Us -->
+<section id="why-chose" class="whychose_us bgc-f8 pb30">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 offset-lg-3">
+				<div class="main-title text-center">
+					<h2 class="color-white">Why Choose Us</h2>
+					<p>We provide full service at every step.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 col-lg-4 col-xl-4">
+				<div class="why_chose_us">
+					<div class="icon">
+						<span class="flaticon-high-five"></span>
+					</div>
+					<div class="details">
+						<h4>Trusted By Thousands</h4>
+						<p>
+							Aliquam dictum elit vitae mauris facilisis at dictum urna
+							dignissim donec vel lectus vel felis.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-lg-4 col-xl-4">
+				<div class="why_chose_us">
+					<div class="icon">
+						<span class="flaticon-home-1"></span>
+					</div>
+					<div class="details">
+						<h4>Wide Renge Of Properties</h4>
+						<p>
+							Aliquam dictum elit vitae mauris facilisis at dictum urna
+							dignissim donec vel lectus vel felis.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-lg-4 col-xl-4">
+				<div class="why_chose_us">
+					<div class="icon">
+						<span class="flaticon-profit"></span>
+					</div>
+					<div class="details">
+						<h4>Financing Made Easy</h4>
+						<p>
+							Aliquam dictum elit vitae mauris facilisis at dictum urna
+							dignissim donec vel lectus vel felis.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Start Partners -->
+<section class="start-partners bgc-thm pt50 pb50">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8">
+				<div class="start_partner tac-smd">
+					<h2>Become a Project Managert</h2>
+					<p>We only work with the best companies around the globe</p>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="parner_reg_btn text-right tac-smd">
+					<a class="btn btn-thm2" href="#">Register Now</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock body%}

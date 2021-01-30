@@ -1,0 +1,202 @@
+{% extends 'ui/layout.html' %}
+{% load static%} {% block body%}
+	<!-- Inner Page Breadcrumb -->
+	<section class="inner_page_breadcrumb">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-6">
+					<div class="breadcrumb_content">
+						<ol class="breadcrumb">
+						    <li class="breadcrumb-item"><a href="#">Home</a></li>
+						    <li class="breadcrumb-item active" aria-current="page">About Us</li>
+						</ol>
+						<h1 class="breadcrumb_title">About Us</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- About Text Content -->
+	<section class="about-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 offset-lg-3">
+					<div class="main-title text-center">
+						<h2 class="mt0">Everyone Grows Together</h2>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-8 col-xl-7">
+					<div class="about_content">
+						<p class="large">Coding is one of the biggest trends to hit the education sector. If you want to set your children up for academic success, make sure they learn to code. When your kid learns to code, it not only boosts their math and writing skills but also gives them valuable capabilities in life, and eventually in the workforce. Basically, they gain an understanding of how digital technology works. As a parent, you need to understand digital technology plays a significant part in your kid’s life. They are always surrounded by electronics such as smartphones, laptops, iPads, PlayStation, and Xbox. Underlying technology that drive these devices are software or computer programs created by coders. The kids must know that there’s no magic behind these games, it is the coding that runs these programs; so they themselves can also learn to code programs that can be highly valuable..</p>
+						<p>Kids who are introduced to coding at an early are more likely to excel in academics. This is because coding helps your kid to plan and organize their thoughts in a way they desire. Coding helps in synchronization of mind with hand, which is of utmost requirement when a kid wants to write something from his/her creativity. So as the coding skills of your kid develop, writing skills would also intensify simultaneously.</p>
+						<p>Coding encourages kids to think outside the box. They are required to do variations of coding with an endless search for solutions, and this motivates kids to use their creative minds by stretching it to the maximum. Besides that, kids who can learn to code faster have a clear cut idea of structure formation. They know the importance of a beginning, middle, and end structure just like storytelling. This can later help them in writing as well as speaking..</p>
+						<ul class="ab_counting">
+							<li class="list-inline-item">
+								<div class="about_counting">
+									<div class="icon"><span class="flaticon-user"></span></div>
+									<div class="details">
+										<h3>5</h3>
+										<p>Mentors we have</p>
+									</div>
+								</div>
+							</li>
+							<li class="list-inline-item">
+								<div class="about_counting">
+									<div class="icon"><span class="flaticon-home"></span></div>
+									<div class="details">
+										<h3>23</h3>
+										<p>Students Acquired</p>
+									</div>
+								</div>
+							</li>
+							<li class="list-inline-item">
+								<div class="about_counting">
+									<div class="icon"><span class="flaticon-transfer"></span></div>
+									<div class="details">
+										<h3>13</h3>
+										<p>Final outputs</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-4 col-xl-5">
+					<div class="about_thumb">
+						<img class="img-fluid w100" src="{% static 'images/about.jpeg'%}" alt="1.jpg">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/G-sD4NU-nNs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+			<div class="row mt50">
+				<div class="col-lg-6 offset-lg-3">
+					<div class="main-title text-center">
+						<h2>Why Choose Us</h2>
+						<p>We provide full service at every step.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-lg-4 col-xl-4">
+					<div class="why_chose_us style2">
+						<div class="icon">
+							<span class="flaticon-high-five"></span>
+						</div>
+						<div class="details">
+							<h4>Trusted By Many</h4>
+							<p>Presence of great mentors makes it easy for young minds to explore.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4 col-xl-4">
+					<div class="why_chose_us style2">
+						<div class="icon">
+							<span class="flaticon-home-1"></span>
+						</div>
+						<div class="details">
+							<h4>Wide Renge Of Projects</h4>
+							<p>Find as many projects as you can collaborate and work</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4 col-xl-4">
+					<div class="why_chose_us style2">
+						<div class="icon">
+							<span class="flaticon-profit"></span>
+						</div>
+						<div class="details">
+							<h4>Learning Made Easy</h4>
+							<p>With proper communication and highly skilled mentors excel with flying colours</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Our Team -->
+	<section class="our-team bgc-f7">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 offset-lg-3">
+					<div class="main-title text-center">
+						<h2>Our Team</h2>
+						<p>A strong foundation always reach heights.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="team_slider">
+						<div class="item">
+							<div class="team_member">
+								<div class="thumb">
+									<img class="img-fluid" src="{%static 'images/team/abhishek.jpeg'%}" alt="1.jpg">
+									<div class="overylay">
+										<ul class="social_icon">
+											<li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+											<li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+											<li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
+											<li class="list-inline-item"><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+											
+											
+										</ul>
+									</div>
+								</div>
+								<div class="details">
+									<h4>Abhishek Agrawal</h4>
+									<p>Backend</p>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="team_member">
+								<div class="thumb">
+									<img class="img-fluid" src="{%static 'images/team/vinayak.jpeg'%}" alt="2.jpg">
+									<div class="overylay">
+										<ul class="social_icon">
+											<li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+											<li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+											<li class="list-inline-item"><a href="https://www.instagram.com/ig_rawx/"><i class="fa fa-instagram"></i></a></li>
+											
+										
+									
+											<li class="list-inline-item"><a href="https://www.linkedin.com/in/vinayak-rawat-54a1691b1"><i class="fa fa-linkedin-square"></i></a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="details">
+									<h4>Vinayak rawat</h4>
+									<p>Frontend</p>
+								</div>
+							</div>
+						</div>
+						
+						<div class="item">
+							<div class="team_member">
+								<div class="thumb">
+									<img class="img-fluid" src="{%static 'images/team/rahul.jpeg'%}" alt="4.jpg">
+									<div class="overylay">
+										<ul class="social_icon">
+											<li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+											<li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+											<li class="list-inline-item"><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+											<li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
+											
+										</ul>
+									</div>
+								</div>
+								<div class="details">
+									<h4>Rahul Kesharwani</h4>
+									<p>Frontend</p>
+								</div>
+							</div>
+						</div>
+						
+						
+	</section>
+
+{%endblock body%}
