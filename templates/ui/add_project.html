@@ -1,0 +1,68 @@
+{% extends 'ui/layout.html' %} {% block body%}
+
+	<!-- Our Dashbord -->
+	<section class="our-dashbord dashbord bgc-f7 pb50">
+		<div class="container-fluid ovh">
+			<div class="row">
+				<div class="col-lg-3 col-xl-2 dn-992 pl0"></div>
+				<div class="col-lg-9 col-xl-10 maxw100flex-992">
+					<div class="row">
+						<div class="col-lg-12">
+							<
+						</div>
+						<div class="col-lg-12 mb10">
+							<div class="breadcrumb_content style2">
+								<h2 class="breadcrumb_title">Add New Project</h2>
+								<p>We are glad to see you again!</p>
+							</div>
+						</div>
+					<form action="{%url 'add_project'%}" method="POST">
+						{% csrf_token%}
+
+						<div class="col-lg-12">
+							<div class="my_dashboard_review">
+								<div class="row">
+									<div class="col-lg-12">
+										<h4 class="mb30">Create Project</h4>
+										<div class="my_profile_setting_input form-group">
+					{{projectForm.name.label_tag}}{{projectForm.name}}					</div>
+									</div>
+									<div class="col-lg-12">
+										<div class="my_profile_setting_textarea">{{projectForm.description.label_tag}}{{projectForm.description}}
+										</div>
+									</div>
+									<div class="col-xl-12">
+										<div class="my_profile_setting_input">
+											<button class="btn btn2 float-right">Submit</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row mt50">
+						<div class="col-lg-12">
+							<div class="copyright-widget text-center">
+								<p>© 2020 Find House. Made with love.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<a class="scrollToHome" href="#"><i class="flaticon-arrows"></i></a>
+</div>
+<script>
+	window.onload = () => {
+		inputs = document.getElementsByTagName("input");
+		console.log(inputs);
+		for (var i = 0; i < inputs.length; i++) {
+			inputs[i].classList.add("form-control");
+		}
+		textarea = document.getElementsByTagName("textarea")[0];
+		textarea.classList.add("form-control");
+		
+	};
+</script>
+{%endblock body%}

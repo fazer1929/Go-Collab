@@ -1,11 +1,11 @@
 from django.contrib.auth import login, authenticate,logout
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,resolve_url
 from django.contrib.auth.decorators import login_required
 from users.forms import SignUpForm,LoginForm
 #Static Views
 
 
-@login_required(login_url='/users/login/')
+@login_required(login_url='users/login')
 def profileView(request):
     return render(request,"ui/profile.html")
 
@@ -23,7 +23,7 @@ def signupView(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            return redirect('home')
+            return redirect('index')
     else:
         form = SignUpForm()
     return render(request, 'ui/signup.html', {'form': form})

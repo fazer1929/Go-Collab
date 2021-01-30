@@ -172,7 +172,7 @@
 			<div class="col-md-12 col-lg-8">
 				<div class="row">
 					{% for project in projects%}
-					<div class="col-lg-12">
+					<div class="col-lg-12" >
 						<div class="feat_property list" style="padding: 20px">
 							<div class="tc_content">
 								<div class="dtls_headr">
@@ -182,7 +182,7 @@
 										</button></a
 									>
 								</div>
-								<h3>{{project.name}}</h3>
+								<a href="{%url 'project-detail' id=project.id%}"><h3>{{project.name}}</h3></a>
 
 								<p>{{project.description}}</p>
 								<strong>

@@ -80,14 +80,10 @@
 								>
 							</li>
 
-							<li class="last">
-								<a href="{% url 'contact' %}"
-									><span class="title">Contact</span></a
-								>
-							</li>
+							
 							{%if request.user.is_authenticated %}
 							<li>
-								<a href="#"><span class="title">Profile</span></a>
+								<a href="{%url 'profile' %}"><span class="title">Profile</span></a>
 							</li>
 							<li>
 								<a href="{% url 'logout' %}"
@@ -149,7 +145,6 @@
 						<li><a href="{% url 'index' %}">Home</a></li>
 						<li><a href="{% url 'index' %}">Projects</a></li>
 						<li><a href="#">Profile</a></li>
-						<li><a href="{% url 'contact' %}">Contact</a></li>
 						<li>
 							<a href="{% url 'about' %}"> About</a>
 						</li>
@@ -158,7 +153,10 @@
 							<a href="{% url 'logout' %}"
 								><span class="flaticon-user"></span> Logout</a
 							>
-						</li>
+                        </li>
+                        <li>
+								<a href="{%url 'profile' %}"><span class="title">Profile</span></a>
+							</li>
 						<li class="cl_btn">
 							<a class="btn btn-block btn-lg btn-thm circle" href="#"
 								><span class="flaticon-plus"></span> Create Project</a
@@ -252,7 +250,7 @@
 							
 							<li class="list-inline-item"><a href="{% url 'projects'%}">Projects</a></li>
 							
-							<li class="list-inline-item"><a href="{% url 'contact'%}">Contact</a></li>
+							<li class="list-inline-item"><a href="{% url 'about'%}">About</a></li>
 						</ul>
 					</div>
 				</div>

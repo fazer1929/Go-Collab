@@ -11,11 +11,20 @@ from django.contrib.auth.decorators import login_required
 
 # Static Pages
 
-@login_required(login_url='/users/login/')
+@login_required(login_url='/user/login/')
 def projects(request):
     projects=Project.objects.order_by('-created_at')
     return render(request,'ui/project.html',{
         "projects":projects
+    })
+
+
+@login_required(login_url='/user/login/')
+def projectDetail(request,id):
+    print("\n\n\n"+id+"\n\n\n")
+    project=Project.objects.filter(id=int(id))[0]
+    return render(request,'ui/project_detail.html',{
+        "project":project
     })
 
 def contact(request):
@@ -33,26 +42,23 @@ def index(request):
         "projects":projects
     })
 
-@login_required(login_url='/users/login/')
+@login_required(login_url='/user/login/')
 def projectCreateView(request):
     if request.method == "POST":
         project = ProjectForm(request.POST)
         if project.is_valid():
             project.owner = request.user
             project.save()
-    else:
-        project= ProjectForm(prefix="project")
-        comment= CommentForm(prefix="comment")
-        return render(request,"ui/index.html",{
-            "commentForm":comment,
+    project= ProjectForm()
+    return render(request,"ui/add_project.html",{
             "projectForm":project
         })
+    
 
 
 
 
-
-@login_required(login_url='/users/login/')
+@login_required(login_url='/user/login/')
 def commentView(request):
     if request.method == "POST":
         comment = CommentForm(request.POST)
@@ -73,7 +79,7 @@ def commentView(request):
 #     "user_id":3
 # }
 @csrf_exempt
-@login_required(login_url='/users/login/')
+@login_required(login_url='/user/login/')
 def addUserAproval(request):
     if request.method=="POST":
         data = json.loads(request.body)
@@ -104,7 +110,7 @@ def addUserAproval(request):
 #     "user_id":3
 # }
 @csrf_exempt
-@login_required(login_url='/users/login/')
+@login_required(login_url='/user/login/')
 def addUserMember(request):
     if request.method=="POST":
         data = json.loads(request.body)
@@ -133,7 +139,7 @@ def addUserMember(request):
 #     "project_id":3
 # }
 @csrf_exempt
-@login_required(login_url='/users/login/')
+@login_required(login_url='/user/login/')
 def addComments(request):
     if request.method=="POST":
         data = json.loads(request.body)

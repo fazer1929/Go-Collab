@@ -6,8 +6,10 @@ urlpatterns = [
     path('addaprove/',views.addUserAproval,name="add_aprove"),
     path('addmembers/',views.addUserAproval,name="add_members"),
     path('addcomment/',views.addComments,name="add_comments"),
+    path('addproject/',views.projectCreateView,name="add_project"),
     path('projects/',views.projects,name="projects"),
     path('contact/',views.contact,name="contact"),
     path('about/',views.about,name="about"),
     path('create/',views.projectCreateView,name="create-project"),
+    path('project/<str:id>/',views.projectDetail,name="project-detail"),
 ]
