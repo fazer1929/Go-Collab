@@ -8,5 +8,6 @@ urlpatterns = [
     path('addcomment/',views.addComments,name="add_comments"),
     path('projects/',views.projects,name="projects"),
     path('contact/',views.contact,name="contact"),
+    path('about/',views.about,name="about"),
     path('create/',views.projectCreateView,name="create-project"),
 ]

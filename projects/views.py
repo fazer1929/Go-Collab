@@ -20,6 +20,8 @@ def projects(request):
 
 def contact(request):
     return render(request,"ui/contact.html")
+def about(request):
+    return render(request,"ui/about.html")
 
 
 
