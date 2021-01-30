@@ -47,6 +47,7 @@
 			</div>
 			<div class="col-lg-12">
 				<div class="feature_property_slider">
+					
 					{% for project in projects %}
 					<div class="item">
 						<div class="feat_property">
@@ -164,4 +165,5 @@
 		</div>
 	</div>
 </section>
+{{request.user.is_authenticated}}
 {% endblock body%}

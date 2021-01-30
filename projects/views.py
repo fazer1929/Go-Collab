@@ -5,9 +5,13 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
 from django.http import HttpResponse,JsonResponse
 from projects.models import Project,Comment
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 
 # Static Pages
+
+@login_required(login_url='/users/login/')
 def projects(request):
     projects=Project.objects.order_by('-created_at')
     return render(request,'ui/project.html',{
@@ -22,11 +26,12 @@ def contact(request):
 
 
 def index(request):
-    projects = Project.objects.order_by('-created_at')[:3]
+    projects = Project.objects.order_by('-created_at')[:5]
     return render(request,"ui/index.html",{
         "projects":projects
     })
 
+@login_required(login_url='/users/login/')
 def projectCreateView(request):
     if request.method == "POST":
         project = ProjectForm(request.POST)
@@ -45,6 +50,7 @@ def projectCreateView(request):
 
 
 
+@login_required(login_url='/users/login/')
 def commentView(request):
     if request.method == "POST":
         comment = CommentForm(request.POST)
@@ -65,6 +71,7 @@ def commentView(request):
 #     "user_id":3
 # }
 @csrf_exempt
+@login_required(login_url='/users/login/')
 def addUserAproval(request):
     if request.method=="POST":
         data = json.loads(request.body)
@@ -95,6 +102,7 @@ def addUserAproval(request):
 #     "user_id":3
 # }
 @csrf_exempt
+@login_required(login_url='/users/login/')
 def addUserMember(request):
     if request.method=="POST":
         data = json.loads(request.body)
@@ -123,6 +131,7 @@ def addUserMember(request):
 #     "project_id":3
 # }
 @csrf_exempt
+@login_required(login_url='/users/login/')
 def addComments(request):
     if request.method=="POST":
         data = json.loads(request.body)
