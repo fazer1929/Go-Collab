@@ -1,7 +1,7 @@
 from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect
 
-from users.forms import SignUpForm
+from users.forms import SignUpForm,LoginForm
 #Static Views
 
 
@@ -23,7 +23,7 @@ def signupView(request):
             return redirect('home')
     else:
         form = SignUpForm()
-    return render(request, 'signup.html', {'form': form})
+    return render(request, 'ui/signup.html', {'form': form})
 
 def loginView(request):
     if request.method == 'POST':
@@ -37,5 +37,5 @@ def loginView(request):
             return redirect('home')
     else:
         form = LoginForm()
-    return render(request, 'signup.html', {'form': form})
+    return render(request, 'ui/signin.html', {'form': form})
     

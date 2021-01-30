@@ -9,7 +9,10 @@ from projects.models import Project,Comment
 
 # Static Pages
 def projects(request):
-    return render(request,'ui/project.html')
+    projects=Project.objects.order_by('-created_at')
+    return render(request,'ui/project.html',{
+        "projects":projects
+    })
 
 def contact(request):
     return render(request,"ui/contact.html")
@@ -18,23 +21,13 @@ def contact(request):
 
 
 
+def index(request):
+    projects = Project.objects.order_by('-created_at')[:3]
+    return render(request,"ui/index.html",{
+        "projects":projects
+    })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-def projectView(request):
+def projectCreateView(request):
     if request.method == "POST":
         project = ProjectForm(request.POST)
         if project.is_valid():
@@ -47,6 +40,8 @@ def projectView(request):
             "commentForm":comment,
             "projectForm":project
         })
+
+
 
 
 
