@@ -7,6 +7,33 @@ from django.http import HttpResponse,JsonResponse
 from projects.models import Project,Comment
 # Create your views here.
 
+# Static Pages
+def projects(request):
+    return render(request,'ui/project.html')
+
+def contact(request):
+    return render(request,"ui/contact.html")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def projectView(request):
     if request.method == "POST":
         project = ProjectForm(request.POST)
@@ -16,7 +43,7 @@ def projectView(request):
     else:
         project= ProjectForm(prefix="project")
         comment= CommentForm(prefix="comment")
-        return render(request,"projects/index.html",{
+        return render(request,"ui/index.html",{
             "commentForm":comment,
             "projectForm":project
         })
