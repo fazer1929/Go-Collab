@@ -177,7 +177,7 @@
 							<div class="tc_content">
 								<div class="dtls_headr">
 									<a class="fp_price" href="#"
-										><button type="button" class="btn btn-lg btn-primary">
+										><button type="button" class="btn btn-lg btn-primary" onclick="sendReq('{{project.id}}','{{request.user.id}}')">
 											Apply
 										</button></a
 									>
@@ -242,5 +242,32 @@
 		</div>
 	</div>
 </section>
-
+<script>
+	function sendReq(pid,uid){
+		data={
+			cmd:"add_appr",
+			user_id:parseInt(uid),
+			project_id:parseInt(pid),
+		}
+		url="{{request.host}}/addaprove/"
+		postData(url,data).then(data => console.log(data))
+	}
+	async function postData(url = '', data = {}) {
+  // Default options are marked with *
+  const response = await fetch(url, {
+    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    mode: 'cors', // no-cors, *cors, same-origin
+    cache: 'no-cache', 
+    credentials: 'same-origin', 
+    headers: {
+      'Content-Type': 'application/json'
+     ,
+    },
+    redirect: 'follow',
+    referrerPolicy: 'no-referrer',
+    body: JSON.stringify(data) 
+  });
+  return response.json();
+}
+</script>
 {%endblock body%}
